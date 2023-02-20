@@ -14,4 +14,8 @@ To use the tool, ensure you have permission to scan and attack the target networ
 
 Automated vulnerability scanning and exploitation can be illegal and dangerous. Make sure you have permission to scan and attack the target network or hosts, and comply with all relevant laws and regulations. Use at your own risk.
 
+## Installation 
+
+### Terminal
+
 
