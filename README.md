@@ -1,4 +1,4 @@
-# Network Vulnerability Scanner and Exploitation Tool
+# Automated Network Vulnerability Scanner and Exploitation Tool
 
 This is a simple script that allows you to scan a network for hosts and detect any vulnerabilities using the National Vulnerability Database (NVD) API. The tool then exploits any high or critical vulnerabilities detected using the Metasploit framework.
 
