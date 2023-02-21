@@ -74,7 +74,7 @@ def main():
     else:
         selected_indexes_list = [int(i.strip()) for i in selected_indexes.split(",")]
         selected_clients = [scan_result[i-1] for i in selected_indexes_list]
-else:
+    else:
     selected_clients = scan_result
 
 # Update the vulnerability database
