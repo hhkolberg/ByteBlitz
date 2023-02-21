@@ -69,19 +69,19 @@ def main():
             print(f"{index+1}. IP: {client['ip']} Hostname: {client['hostname']} Vendor: {client['vendor']}")
         selected_indexes = input("Enter the numbers of the clients you want to attack (comma-separated), or leave empty to attack all: ")
 
-    if not selected_indexes:
+        if not selected_indexes:
+            selected_clients = scan_result
+        else:
+            selected_indexes_list = [int(i.strip()) for i in selected_indexes.split(",")]
+            selected_clients = [scan_result[i-1] for i in selected_indexes_list]
+    else:
         selected_clients = scan_result
-    else:
-        selected_indexes_list = [int(i.strip()) for i in selected_indexes.split(",")]
-        selected_clients = [scan_result[i-1] for i in selected_indexes_list]
-    else:
-    selected_clients = scan_result
 
-# Update the vulnerability database
-cve_list = update_vulnerability_database()
+    # Update the vulnerability database
+    cve_list = update_vulnerability_database()
 
-# Scan for vulnerabilities and exploit them on the selected clients
-for client in selected_clients:
-    scan_vulnerabilities(client, cve_list)
+    # Scan for vulnerabilities and exploit them on the selected clients
+    for client in selected_clients:
+        scan_vulnerabilities(client, cve_list)
 
-print("Done.")
+    print("Done.")
